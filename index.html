@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="style.css">
+    <script src="https://www.google.com/recaptcha/api.js"></script>
     <script src="script.js"></script>
 </head>
 <body>
@@ -12,6 +13,7 @@
 <h1>Create Lead</h1>
 <form action="https://webto.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8&orgId=00DWU00000HhoJb" method="POST"  onsubmit="beforeSubmit()">
 
+<input type=hidden name='captcha_settings' value='{"keyname":"WebToLead","fallback":"true","orgId":"00DWU00000HhoJb","ts":""}'>
 <input type=hidden name="oid" value="00DWU00000HhoJb">
 <input type=hidden name="retURL" value="https://saisantosh9.github.io/Web_to_Lead/thanks.html">
 <input type=hidden name="Lead_Date__c" class="outputdate"/>
@@ -31,7 +33,7 @@
 
 <!-- Lead Date:<span class="dateInput dateOnlyInput">
     <input  id="00NWU00000t6FmI" name="00NWU00000t6FmI" size="12" type="text" /></span><br> -->
-
+<div class="g-recaptcha" data-sitekey="6LcRr2crAAAAAAPjumPi60swAVt2paKpSWhWNUDG"></div><br>
 <input type="submit" name="submit" class="submit">
 
 </form>
