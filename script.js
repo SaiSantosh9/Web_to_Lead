@@ -1,3 +1,6 @@
+let captchachecked = false;
+
+if(captchachecked){
 function beforeSubmit() {
     // Get the input and output elements
     let outputdate = document.querySelector(".outputdate");
@@ -10,7 +13,11 @@ function beforeSubmit() {
     // outputdate.value = formattedDate;
     // // Log for debugging
     // console.log("Lead Date Value:", formattedDate);
+    }
+}else{
+    alert("Please check the recaotcha to submit the lead");
 }
+
 
  function timestamp() { 
     var response = document.getElementById("g-recaptcha-response"); 
@@ -19,3 +26,8 @@ function beforeSubmit() {
         elems["ts"] = JSON.stringify(new Date().getTime());
         document.getElementsByName("captcha_settings")[0].value = JSON.stringify(elems); 
     } } setInterval(timestamp, 500); 
+
+function captchasuccess(){
+    captchachecked = true;
+    
+}
