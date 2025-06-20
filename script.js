@@ -1,7 +1,6 @@
 let captchachecked = false;
-
+function beforeSubmit(event) {
 if(captchachecked){
-function beforeSubmit() {
     // Get the input and output elements
     let outputdate = document.querySelector(".outputdate");
     let inputdate = document.querySelector(".inputdate");
@@ -14,10 +13,11 @@ function beforeSubmit() {
     // // Log for debugging
     // console.log("Lead Date Value:", formattedDate);
     }
-}else{
+else{
     alert("Please check the recaotcha to submit the lead");
+    event.preventDefault();
+    }
 }
-
 
  function timestamp() { 
     var response = document.getElementById("g-recaptcha-response"); 
